@@ -311,6 +311,7 @@ class PCTBuildConfigure(Command):
             cmd = "sh configure"    # we use "sh" here so that it'll work on mingw32 with standard python.org binaries
             if self.verbose < 1:
                 cmd += " -q"
+            cmd += " --without-gmp"
             if os.system(cmd) != 0:
                 raise RuntimeError("autoconf error")
 
